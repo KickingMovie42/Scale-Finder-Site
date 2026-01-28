@@ -1,0 +1,130 @@
+:root{
+  --bg: #0f1115;
+  --panel: #161a22;
+  --text: #e9eef7;
+  --muted: #aab4c5;
+
+  /* Fretboard colors (theme-safe) */
+  --board-bg: #f9f9f9;
+  --string: #111111;
+  --fret: #555555;
+  --label: #111111;
+
+  --marker: #e0e0e0;
+  --marker-stroke: #111111;
+  --root: #ffcc66;
+  --blue: #99ccff;
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg: #f6f7fb;
+    --panel: #ffffff;
+    --text: #111827;
+    --muted: #4b5563;
+  }
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.wrap{
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 0 16px 32px;
+}
+
+h1{
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.controls{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:end;
+  background: var(--panel);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+select, button{
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  padding: 0 10px;
+}
+
+@media (prefers-color-scheme: light){
+  select, button{
+    border: 1px solid rgba(17,24,39,0.12);
+    background: rgba(17,24,39,0.03);
+  }
+}
+
+button{
+  cursor:pointer;
+  font-weight:600;
+}
+
+.info{
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--panel);
+  border-radius: 12px;
+}
+
+#notesLine{
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.legend{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.dot{
+  display:inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid var(--marker-stroke);
+  margin-right: 6px;
+}
+.dot.root{ background: var(--root); }
+.dot.blue{ background: var(--blue); }
+.dot.normal{ background: var(--marker); }
+
+.board{
+  margin-top: 12px;
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+#svgHost svg{
+  width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 10px;
+}

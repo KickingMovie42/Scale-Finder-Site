@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scale Finder + Fretboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>Scale Finder + Fretboard</h1>
+
+    <section class="controls">
+      <label>
+        Root note
+        <select id="rootSelect"></select>
+      </label>
+
+      <label>
+        Scale
+        <select id="scaleSelect"></select>
+      </label>
+
+      <label>
+        Max fret
+        <select id="maxFretSelect"></select>
+      </label>
+
+      <button id="showBtn">Show Fretboard</button>
+    </section>
+
+    <section class="info">
+      <div id="notesLine">(nothing yet)</div>
+      <div class="legend">
+        <span class="dot root"></span> Root
+        <span class="dot blue"></span> Blue note (b5)
+        <span class="dot normal"></span> Scale note
+      </div>
+    </section>
+
+    <section class="board">
+      <div id="svgHost" aria-label="Fretboard"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
